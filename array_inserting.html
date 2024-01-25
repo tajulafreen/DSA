@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Array Insert element in JS 
+javascript data structure
+Understand issue and solution with Whiteboard
+Make array, define the position. 
+Use Loop to insert new element
+Insert element with text input and button. 
+Insert Element with by default function. -->
+    <title>Array Inserting</title>
+    <script>
+        
+        
+      //  function insertElement(){
+       //     array.splice(position,0,newElement); //position: The index where the insertion should start.
+           // 0: The number of elements to be removed (in this case, none are removed, as indicated by 0).
+          //  newElement: The element to be added.
+
+       //     console.log(array);
+      //  }
+
+      function insertElement(){
+        let array = [20,30,40,50,70,90,30,60];
+        console.log(array)
+        let position = parseInt(document.getElementById("position").value);
+        let newElement = parseInt(document.getElementById("new").value);
+        if(!isNaN(position) && !isNaN(newElement)){
+        
+        for(let i = array.length - 1; i >= 0; i--){
+            if(i>= position){
+                array[i + 1] = array[i];
+                if(i == position){
+                    array[i] = newElement;
+                } 
+            }
+        }
+
+        alert(array)
+    }
+    else{
+        alert('Invalid Input')
+    }
+    }
+        
+        
+    </script>
+</head>
+<body>
+    <input type="text" id="position" placeholder="enter position"/>
+    <input type="text" id="new" placeholder="enter new element"/>
+    <button onclick="insertElement()" >submit</button>
+</body>
+</html>
