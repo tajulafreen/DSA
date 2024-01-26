@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Array Insert element in JS 
+    javascript data structure
+    Understand issue and solution with Whiteboard
+    Make array, define the position. 
+    Use Loop to delete element
+    delete element with text input and button. 
+    delete Element with by default function. -->
+     
+    <title>Delete Array Element</title>
+    <script>
+        const deleteElement = () =>{
+            
+        let array = [20,30,40,50,70,90,30,60];
+        console.log(array)
+        let delelement = parseInt(document.getElementById('position').value);
+       // for(let i = delelement;i< array.length-1;i++) {
+          //  array[i] = array[i+1]
+
+      //  }
+        //array.length = array.length-1
+        array.splice(delelement, 1)
+        console.log(array)
+        alert(`${array} deleted successfully`)
+       };
+    </script>
+</head>
+<body>
+    <input type="number" id="position" placeholder="enter position to delete"/>
+    
+    <button onclick="deleteElement()" >submit</button>
+</body>
+</html>
