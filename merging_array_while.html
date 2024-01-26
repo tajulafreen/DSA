@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Merge Two Array(While Loop) in javaScript
+    Understand Case and solution with Whiteboard
+    Make three arrays. 
+    Use while Loop to Merge element
+    Compare this logic with last one -->
+    <title>Merge Two Array</title>
+    <script>
+        let array1 = [20,30,40,50,70,90,30,60];
+        let array2 = [20,80,40,50];
+        let array3 = array1.concat(array2)
+        function sortarray(){
+        let a1 = 0
+        let a2 = 0
+        let a3 = 0;
+        while(a1 < array1.length && a2 < array2.length){
+            if(array1[a1] < array2[a2]){
+                array3[a3] = array1[a1]
+                a1++
+            }
+            else{
+                array3[a3] = array2[a2]
+                a2++
+            }
+            a3++
+        }
+        while (a1 < array1.length) {
+            array3[a3] = array1[a1];
+            a1++;
+            a3++;
+        }
+        while (a2 < array2.length) {
+            array3[a3] = array2[a2];
+            a2++;
+            a3++;
+        }
+    }
+        console.log(array3.sort((a,b) => a+b))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
