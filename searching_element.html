@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Array Search element in JS 
+Understand Case and solution with Whiteboard
+Make array. 
+Use Loop to Search element
+Search element with text input and button. -->
+    <title>Array Search element</title>
+    <script>
+        const getElement = ()=>{
+        let array = [20,30,40,50,70,90,30,60];
+        let item = document.getElementById('position').value;
+        let index;
+        for(let i = 0;i<array.length;i++) {
+           if(array[i] == parseInt(item)){
+             index = i
+        break
+           }
+        }
+         alert(index)
+         console.log(index)
+    }
+      //  console.log(array.indexOf(item))
+    </script>
+</head>
+<body>
+    <input type="number" id="position" placeholder="enter element"/>
+    
+    <button onclick="getElement()" >submit</button>
+</body>
+</html>
