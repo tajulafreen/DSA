@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Array Sorting
+Basic Understanding
+Understand Solution with Whiteboard
+Write Code and understand step by step
+Interview Question -->
+    <title>Array sorting</title>
+    <script>
+let array = [40,30,10,70,50]
+for(let i = 0;i<array.length;i++){
+    for(let j = 0;j<array.length;j++){
+       if(array[j]>array[j+1]){
+           let temp = array[j]
+            array[j] = array[j+1]
+            array[j+1] = temp
+        }
+    }
+  }
+
+console.log(array)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
