@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name" style="font-size: 20px;">Afreen</h1>
+    <button id="btn">Click Me</button>
+    <script>
+
+        const initt = () => {
+            const name = "Afreen"
+            const consoleName = ()=>{
+              console.log(name)
+              
+            }
+             consoleName()
+              }
+              //initt()
+             
+        const init = () => {
+      const name = "Afreen"
+      const consoleName = ()=>{
+        console.log(name)
+        
+      }
+      return consoleName
+        }
+       const display = init()
+       //display()
+
+const adder = (num) => {
+function added(b) {
+    const c = num + b
+    console.log(num + b)
+   
+}
+return added
+}
+const addto5 = adder(5)
+const addto10 = adder(15)
+//addto10(2)
+
+
+const namec = document.getElementById("name")
+const btn = document.getElementById("btn")
+function name(size) {
+function changed() {
+namec.style.fontSize = `${size}px`
+}
+return changed
+}
+const add30 = name(30)
+const add40 = name(40)
+const add50 = name(50)
+
+//btn.addEventListener("click", add30)
+
+function count() {
+    let counter = 0;
+    function add(num){
+        counter+=num
+        console.log(counter)
+    }
+   function increment(){
+add(1)
+   }
+   function decrement(){
+    add(-1)
+   }
+   function value() {
+    return counter
+   }
+   return{
+    increment,
+    decrement,
+    value
+   }
+}
+
+const counter = count()
+counter.increment()
+console.log(counter.value())
+counter.increment()
+counter.increment()
+console.log(counter.value())
+counter.decrement()
+console.log(counter.value())
+counter.increment()
+console.log(counter.value())
+
+
+    </script>
+</body>
+</html>
