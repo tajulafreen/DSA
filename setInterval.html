@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="time"></h1>
+<button id="stop">stop timer</button>
+  <script>
+    const hour = document.getElementById("time");
+    const stop = document.getElementById("stop");
+    function time() {
+      const timing = new Date();
+      const minutes = `${timing.getHours()}:${timing.getMinutes()}:${timing.getSeconds()}`
+      hour.innerText = minutes
+      console.log(minutes);
+    }
+let inter = setInterval(time, 1000)
+    stop.addEventListener("click",() =>{
+        clearInterval(inter);
+    })
+
+  </script>
+</body>
+</html>
