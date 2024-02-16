@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a){
+            return function(b){
+                return function(c){
+                    return a+b+c
+                }
+            }
+        }
+
+//const added = (a) =>(b)=>(c)=> a+b+c
+      //  console.log(added(10)(20)(1))
+   
+      //const mail = (to) =>(subject)=>(message)=> `Hi this message is from ${to} the subject is ${subject} : ${message}`
+      //console.log(mail("hi@gmail.com")("test")("this is a test message"))
+    </script>
+</body>
+</html>
