@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function add(args) {
+            return args[0] + args[1];
+        }
+        
+        function square(val) {
+            return val * val;
+        }
+        
+        function compose(...fns) {
+            return function (...args) {
+                return fns.reduce((acc, fn) => fn(acc), args);
+              
+            }
+        }
+        
+        const task = compose(add, square, (value) => value+2);
+        console.log(task(2, 3)); // Output: 25
+       // function addsquare(a,b){
+       //     return square(add(a,b))
+      //  }
+
+
+      
+    </script>
 </body>
 </html>
