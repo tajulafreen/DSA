@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterator</title>
+</head>
+<body>
+    <script>
+        function iterator(start = 0, end = Infinity, step = 1) {
+            let nextstart = start
+            let counter = 0
+            return {
+                next(){
+                    let result;
+                    if(counter < end){
+                        result = {
+                            value: nextstart,
+                            done:false
+                        }
+                        nextstart+=step
+                        counter++
+                        return result
+                    }
+                  return {
+                    value: counter,
+                    done: true
+                  }
+                }
+
+            }
+        }
+
+        let makeIterator = iterator(1, 10, 3)
+        let Iterator = makeIterator.next()
+        console.log(Iterator.value)
+
+        while(!Iterator.done){
+            console.log(Iterator.value)
+            Iterator = makeIterator.next()
+        }
+    </script>
+</body>
+</html>
