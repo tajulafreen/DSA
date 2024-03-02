@@ -7,5 +7,51 @@
 </head>
 <body>
     
+    <script>
+        function loadscript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = callback(null, script);
+            script.onerror = callback(Error);
+
+          document.body.appendChild(script);
+        }
+        loadscript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', function(err, script) {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log(script);
+            }
+        });
+
+
+        // promisification
+
+        function promisify(fn){
+            return function (...args){
+                return new Promise((resolve, reject) =>{
+                    fn(...args, (err, result) => {
+                        if(err){
+                            reject(err)
+                        }
+                        else{
+                            resolve(result)
+                        }
+                    })
+                })
+            }
+        }
+
+        let promise = promisify(loadscript)
+        promise("test.js")
+        .then(()=> console.log("Done"))
+        .catch((err) => console.log("Error ho gya"))
+          
+        // using iife
+        (async() =>{
+          const result = await(promise("test.js"))
+          console.log("done")
+        })
+    </script>
 </body>
 </html>
