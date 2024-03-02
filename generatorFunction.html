@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        function* generator(){
+            yield 1;
+            yield 2;
+            yield 3;
+            yield 4;
+            yield 5;
+            yield 6;
+        }
+        let gen = generator()
+     
+        for (const key of gen){
+        console.log(key)
+        }
+
+
+        // make iterators using the generator
+
+        function* iterators(start = 0, end = Infinity){
+            for(let i = start; i <= end; i++){
+                yield i;
+            }
+        }
+        let it = iterators(1, 10)
+        for(const key of it){
+            console.log(key)
+        }
+    </script>
+</body>
+</html>
